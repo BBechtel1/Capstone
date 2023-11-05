@@ -6,9 +6,11 @@
   Time: 11:51 AM
   To change this template use File | Settings | File Templates.
 --------------------------------------------------------------------%>
+
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!Doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,11 +22,14 @@
 
 </head>
 <body class="bodyIndex">
+
 <%--                                       Set up Nav Buttons                                          --%>
 <div class="topNav">
-    <%--    <a href="ClientLogin.jsp"> Client Login Page </a>--%>
+<%--        <a href="ClientLogin.jsp"> Client Login Page </a>--%>
+    <a href="home.jsp"> Home Page </a>
     <a href="ProcessorLoginPage.jsp" class="split"> Processor Login Page </a>
 </div>
+
 <div class="div1">
     <h1 class="h1Index">
         <%--                                            Page Header                                            --%>
@@ -35,7 +40,6 @@
         Just A start page for Testing from a home page/Index Page.</br></br></br><br>
     </h3>
 </div>
-
 
 <%--                                         Right Side PIC                                        --%>
 <div class="div2">
