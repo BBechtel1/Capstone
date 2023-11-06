@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Greeting Card Website</title>
+    <!--CSS LINK-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"><img src="img/hellogift.png"></a>
+
+        <ul class="navbar">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="cards.html">Cards</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+
+        <div class="nav-icons">
+            <a href="#"><i class='bx bxs-shopping-bag'></i> </a>
+            <a href="#"><i class='bx bxs-phone'></i></a>
+            <a href="#"><i class='bx bxs-heart'></i></a>
+            <a href="#"><i class='bx bx-user-circle' onclick="toggleMenu()"></i></a>
+
+        </div>
+
+        <div class="dropdown">
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="userpicture.png">
+                        <h3>Jackson Haney</h3>
+                    </div>
+                    <hr>
+        
+                    <a href="#" class="sub-menu-link">
+                        <img src="userpicture.png">
+                        <p>Edit Profile</p>
+                        <span> > </span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="settings.png">
+                        <p>Settings</p>
+                        <span> > </span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="contactus.png">
+                        <p>Contact Us</p>
+                        <span> > </span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="logout.png">
+                        <p>Logout</p>
+                        <span> > </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!--Login Form-->
+    <section class="container forms">
+        <div class="form login">
+            <div class="content">
+                <h2>Login</h2>
+                <form action="#">
+                    <div class="field input-field">
+                        <input type="email" placeholder="email" class="input">
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" placeholder="password" class="password">
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+                    <div class="form-link">
+                        <a href="#" class="forgot-pass">Forgot password?</a>
+                    </div>
+                    <div class="field button-field">
+                        <button>Login</button>
+                    </div>
+                </form>
+                <div class="form-link">
+                    <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <span>Continue As Guest</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Signup Form -->
+        <div class="form signup">
+            <div class="content">
+                <h2>Signup</h2>
+                <form action="#">
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="input">
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" placeholder="Create password" class="password">
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" placeholder="Confirm password" class="password">
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+                    <div class="field button-field">
+                        <button>Signup</button>
+                    </div>
+                </form>
+                <div class="form-link">
+                    <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <span>Continue As Guest</span>
+                </a>
+            </div>
+        </div>
+        </div>
+    </section>
+    
+    <!-- JavaScript -->
+    <script>
+        const forms = document.querySelector(".forms"),
+                pwShowHide = document.querySelectorAll(".eye-icon"),
+                links = document.querySelectorAll(".link");
+            pwShowHide.forEach(eyeIcon => {
+                eyeIcon.addEventListener("click", () => {
+                    let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+
+                    pwFields.forEach(password => {
+                        if (password.type === "password") {
+                            password.type = "text";
+                            eyeIcon.classList.replace("bx-hide", "bx-show");
+                            return;
+                        }
+                        password.type = "password";
+                        eyeIcon.classList.replace("bx-show", "bx-hide");
+                    })
+
+                })
+            })
+            links.forEach(link => {
+                link.addEventListener("click", e => {
+                    e.preventDefault(); //preventing form submit
+                    forms.classList.toggle("show-signup");
+                })
+            })
+            let subMenu = document.getElementById("subMenu");
+
+            function toggleMenu() {
+                subMenu.classList.toggle("open-menu");
+            }
+        
+
+    </script>
+</body>
+</html>
+
+
